@@ -1,0 +1,141 @@
+body {
+  background-color: #F7EFDA;
+}
+
+.sour-gummy-font {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.dongle-font {
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header, #tool-dock {
+  background-color: #BADD7F;
+  box-shadow: 0px 2px 5px #524f48;
+  color: #e66060;
+}
+
+footer, .warning {
+  color: #e66060;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+#menu-icon-container {
+  width: 30px;
+  height: 30px;
+}
+
+#menu-icon-container:hover {
+  background-color: #f0a9a9;
+  border-radius: 10%;
+}
+
+#rightMenu {
+  display: none; 
+  right: 0; 
+  height: auto;
+  font-size: 20px;
+}
+
+.planter {
+  border-radius: 8%;
+}
+
+.garden-column {
+  width: auto;
+}
+
+.planter-container {
+  display: inline-block;
+  background-color: rgb(230, 190, 162);
+  border-radius: 8%;
+}
+
+#tool-dock {
+  border: 4px solid #3e84409d;
+  height: auto;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool {
+  display: inline-block;
+  background-color: #BADD7F;
+  box-shadow: inset 0px 2px 5px #dbf8c2;
+  cursor: grab;
+}
+
+#tool-container {
+  position: sticky;
+  bottom: 0;
+  left: auto;
+  right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#info-card {
+  position: absolute;
+  width: 300px; 
+  background: rgba(255, 255, 255, 0.944);
+  color: #3e8440;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000; 
+}
+
+meter {
+  width: 100%;
+  height: 12px;
+  appearance: none; 
+  border-radius: 5px;
+}
+
+#info-card-water-meter::-webkit-meter-bar {
+  background: #e0e0e0; 
+  border-radius: 5px;
+}
+#info-card-water-meter::-webkit-meter-optimum-value {
+    background: #4a90e2; 
+}
+#info-card-water-meter::-moz-meter-bar {
+    background: #4a90e2;
+}
+
+#info-card-weed-meter::-webkit-meter-bar {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+#info-card-weed-meter::-webkit-meter-optimum-value {
+    background: #4caf50; 
+}
+#info-card-weed-meter::-moz-meter-bar {
+    background: #4caf50;
+}
+
+#info-card-bug-meter::-webkit-meter-bar {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+#info-card-bug-meter::-webkit-meter-optimum-value {
+    background: #e74c3c; 
+}
+#info-card-bug-meter::-moz-meter-bar {
+    background: #e74c3c;
+}
