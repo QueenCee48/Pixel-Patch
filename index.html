@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Patch: Garden</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Sour+Gummy&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+  </head>
+
+  <body>
+    <header class="w3-container w3-center w3-round-xlarge w3-margin w3-display-container">
+      <h1 class="sour-gummy-font">Pixel Patch</h1>
+      <div id="menu-icon-container" class="w3-display-right w3-margin-right ">
+        <img id="menu-icon" onclick="toggleMenu()" src="https://i.ibb.co/rGxFYMRv/icons8-squared-menu-30.png">
+          <div class="w3-sidebar w3-round-large w3-bar-block w3-card w3-animate-right" id="rightMenu">
+            <a href="https://www.codedex.io/eIRmzHyKjNfB9TsNi1Fl/live" class="sour-gummy-font w3-bar-item w3-button w3-hover-green">Home</a>
+            <a href="https://www.codedex.io/nm3DYYjsrqcJeqt2CccI/live" class="sour-gummy-font w3-bar-item w3-button w3-hover-green">Garden</a>
+            <a href="https://www.codedex.io/UQ2Msi3RdjK1pkMf7Vbx/live" class="sour-gummy-font w3-bar-item w3-button w3-hover-green">Database</a>
+          </div>
+      </div>
+    </header>
+
+    <p class="warning sour-gummy-font w3-center">⚠️ If you leave or refresh the page, all progress will be lost. ⚠️</p>
+
+    <div id="garden-container" class="w3-container w3-center">
+      <div id="row-1" class="w3-row-padding w3-container garden-row w3-margin">
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-1" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-2" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-3" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-4" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-5" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-6" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-7" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-8" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-9" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-10" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-11" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-12" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-13" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-14" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-15" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-16" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-17" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-18" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-19" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-20" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-21" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-22" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-23" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-24" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-25" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-26" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-27" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-28" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-29" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-30" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-31" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-32" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-33" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-34" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-35" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-36" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="row-2" class="w3-row-padding w3-container garden-row w3-margin">
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-37" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-38" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-39" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-40" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-41" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-42" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-43" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-44" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-45" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-46" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-47" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-48" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-49" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-50" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-51" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-52" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-53" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-54" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-55" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-56" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-57" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-58" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-59" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-60" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-61" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-62" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-63" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="garden-column w3-col s3 w3-mobile">
+          <div class="planter-container w3-center w3-margin">
+            <div class="garden-cell w3-cell">
+              <div id="planter-64" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-65" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-66" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-67" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-68" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-69" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+            <div class="garden-cell w3-cell">
+              <div id="planter-70" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-71" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+              <div id="planter-72" class="planter w3-margin">
+                <img src="assets/empty-planter.png" />
+                <meter class="water-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="weed-meter" min="0" max="100" value="0" style="display: none;"></meter>
+                <meter class="bug-meter" min="0" max="100" value="0" style="display: none;"></meter>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div id="tool-container" class="w3-container w3-center">
+      <div id="tool-dock" class="w3-round-xlarge">
+        <div id="seed-pack" class="tool w3-margin w3-round-xlarge"><img draggable="true" src="assets/seed-pack.png" /></div>
+        <div id="water-can" class="tool w3-margin w3-round-xlarge"><img draggable="true" src="assets/water-can.png" /></div>
+        <div id="weed-tool" class="tool w3-margin w3-round-xlarge"><img draggable="true" src="assets/weed-tool.png" /></div>
+        <div id="pest-spray" class="tool w3-margin w3-round-xlarge"><img draggable="true" src="assets/pest-spray.png" /></div>
+      </div>
+    </div>
+
+    <div id="info-card-container" class="w3-container w3-center">
+      <div id="info-card" class="info-card w3-round-large w3-card w3-padding w3-animate-opacity w3-center" style="display: none;">
+          <h2 id="plant-name" class="sour-gummy-font"></h2>
+          <img id="plant-image" src="" class="w3-margin">
+          <p class="sour-gummy-font" style="font-size: 20px;"><strong>Growth Stage:</strong> <span id="growth-stage">0</span></p>
+          
+          <div class="meter-container">
+              <p class="sour-gummy-font">Water: <meter id="info-card-water-meter" min="0" max="100" value="0"></meter></p>
+              <p class="sour-gummy-font">Weeds: <meter id="info-card-weed-meter" min="0" max="100" value="0"></meter></p>
+              <p class="sour-gummy-font">Bugs: <meter id="info-card-bug-meter" min="0" max="100" value="0"></meter></p>
+          </div>
+
+          <p id="plant-type" style="display: none;"></p>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+
+  <footer class="sour-gummy-font w3-center">Created by Ciera Baucham</footer>
+</html>
